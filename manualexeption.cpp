@@ -1,18 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int main (){
-    try{
-        cout<<"Salamat balajar di Prodi TI UMY"<<endl;
-        cout<<"Pernyataan tidak ditampilkan"<<endl;
+int main() {
+    try {
+        cout << "Welcome to the Information Technology Program at UMY" << endl;
+        cout << "This statement is not displayed" << endl;
+    }
+    catch (int a) {
+        cout << "Exception will be executed" << endl;
+    }
 
-    }
-    catch(int a){
-        cout<<"Pengecualian akan di eksekusi"<<endl;
+    catch (...) {
+        cout << "Default exception is executed" << endl;
     }
 
-    catch(...){
-        cout<<"default pengecualian di eksekusi"<<endl;
-    }
     return 0;
 }
