@@ -31,4 +31,16 @@ int main (){
     ifstream infile;
     infile.open(namaFile + ".txt" , ios::in);
     cout << ">= Membaca File: " << endl;
+
+    if(infile.is_open()){
+        while(getline(infile, baris)){
+
+            cout << "- " << baris << endl;
+
+        }
+        infile.close();
+    }else{
+        cout << "Tidak dapat membuka file!" << endl;
+        return 0;
+    }
 }
