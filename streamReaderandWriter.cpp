@@ -3,39 +3,45 @@
 #include <string>
 using namespace std;
 
-int main(){
+int main() {
 
-    string baris;
-    ofstream outfile;
-    outfile.open("contohfile.txt");
-    cout << ">= Menulis File,\'q\' untuk keluar: " << endl;
-    while(true){
+    string line;
 
-        cout<<"- ";
-        getline(cin, baris);
+    ofstream outFile;
+    outFile.open("examplefile.txt");
 
-        if(baris == "q"){
+    cout << ">= Writing to File, enter 'q' to quit: " << endl;
 
+    while (true) {
+
+        cout << "- ";
+        getline(cin, line);
+
+        if (line == "q") {
             break;
-
         }
-        outfile << baris << endl;
+
+        outFile << line << endl;
     }
-    outfile.close();
 
-    ifstream infile;
-    infile.open("contohfile.txt");
-    cout << ">= Membaca File: " << endl;
-    if(infile.is_open()){
-        while(getline(infile, baris)){
+    outFile.close();
 
-            cout << "- " << baris << endl;
+    ifstream inFile;
+    inFile.open("examplefile.txt");
 
+    cout << ">= Reading File: " << endl;
+
+    if (inFile.is_open()) {
+
+        while (getline(inFile, line)) {
+            cout << "- " << line << endl;
         }
-        infile.close();
-    }else{
-        cout << "Tidak dapat membuka file!" << endl;
+
+        inFile.close();
+
+    } else {
+
+        cout << "Cannot open file!" << endl;
         return 0;
     }
-
 }
