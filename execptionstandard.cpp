@@ -11,4 +11,6 @@ int main (){
     }catch (exception& e){
         cout<<"Terjadi kesalahan: "<<e.what()<<endl;
     }
+    cout <<"Akhir Program" << endl;
+    return 0;
 }
