@@ -3,44 +3,44 @@
 #include <string>
 using namespace std;
 
-int main (){
-    string baris,namaFile;
-    cout << "Masukkan nama file (dengan path): ";
-    getline(cin, namaFile);
+int main() {
+    string line, fileName;
 
-    ofstream outfile;
+    cout << "Enter file name (with path): ";
+    getline(cin, fileName);
 
-    outfile.open(namaFile + ".txt" , ios::out);
-    cout << ">= Menulis File,\'q\' untuk keluar: " << endl;
+    ofstream outFile;
 
-    while (true){
+    outFile.open(fileName + ".txt", ios::out);
+    cout << ">= Writing to file, enter 'q' to quit: " << endl;
 
-        cout<<"- ";
-        getline(cin, baris);
+    while (true) {
+        cout << "- ";
+        getline(cin, line);
 
-        if(baris == "q"){
-
+        if (line == "q") {
             break;
-
         }
-        outfile << baris << endl;
+
+        outFile << line << endl;
     }
 
-    outfile.close();
+    outFile.close();
 
-    ifstream infile;
-    infile.open(namaFile + ".txt" , ios::in);
-    cout << ">= Membaca File: " << endl;
+    ifstream inFile;
+    inFile.open(fileName + ".txt", ios::in);
 
-    if(infile.is_open()){
-        while(getline(infile, baris)){
+    cout << ">= Reading file: " << endl;
 
-            cout << "- " << baris << endl;
-
+    if (inFile.is_open()) {
+        while (getline(inFile, line)) {
+            cout << "- " << line << endl;
         }
-        infile.close();
-    }else{
-        cout << "Tidak dapat membuka file!" << endl;
+
+        inFile.close();
+    }
+    else {
+        cout << "Cannot open file!" << endl;
         return 0;
     }
 }
