@@ -21,5 +21,13 @@ int main(){
         }
         outfile << baris << endl;
     }
-    
+    outfile.close();
+
+    ifstream infile;
+    infile.open("contohfile.txt");
+    cout << ">= Membaca File: " << endl;
+    if(infile.is_open()){
+
+        }
+
 }
