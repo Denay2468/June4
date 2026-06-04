@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main (){
+    string baris,namaFile;
+    cout << "Masukkan nama file (dengan path): ";
+    getline(cin, namaFile);
+
+    ofstream outfile;
+
+    outfile.open(namaFile + ".txt" , ios::out);
+    cout << ">= Menulis File,\'q\' untuk keluar: " << endl;
+}
